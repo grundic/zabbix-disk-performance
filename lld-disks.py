@@ -4,7 +4,7 @@ import json
 import subprocess
 
 if __name__ == '__main__':
-    output = subprocess.check_output("/bin/ls /dev/sd*", shell=True)
+    output = subprocess.check_output("cat /proc/diskstats | awk '{print $3}' | grep -v 'ram\|loop\|sr'", shell=True)
     data = list()
     for line in output.split("\n"):
         if line:
