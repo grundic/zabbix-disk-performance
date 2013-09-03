@@ -8,6 +8,6 @@ if __name__ == '__main__':
     data = list()
     for line in output.split("\n"):
         if line:
-	    data.append({"{#DEVICE}": line, "{#DEVICENAME}": line.replace("/dev/", "")})
+	        data.append({"{#DEVICE}": line, "{#DEVICENAME}": line.replace("/dev/", "")})
 
     print(json.dumps({"data": data}))
