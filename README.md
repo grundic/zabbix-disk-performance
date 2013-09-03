@@ -8,6 +8,7 @@ With this template you can collect different disk statistics.
 Installation
 ------------
 To install, copy `userparameter_diskstats.conf` to /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf and `lld-disks.py` to /var/lib/zabbix/scripts/lld-disks.py.
+If /var/lib/zabbix/scripts does't exists, create it: ```sudo mkdir /var/lib/zabbix/scripts -p && sudo chown zabbix:zabbix /var/lib/zabbix -R```
 `userparameter_diskstats.conf` is user parameters for Zabbix.
 `lld-disks.py` is low level discovery script for enumerating disks of your system.
 
