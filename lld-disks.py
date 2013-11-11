@@ -10,4 +10,4 @@ if __name__ == '__main__':
         if line:
 	        data.append({"{#DEVICE}": line, "{#DEVICENAME}": line.replace("/dev/", "")})
 
-    print(json.dumps({"data": data}))
+    print(json.dumps({"data": data}, indent=4))
