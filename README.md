@@ -5,10 +5,10 @@ Zabbix template for collecting IO statistics
 
 With this template you can collect different disk statistics.
 
-![select pictures](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_bytes_second.png?raw=true)
-![select pictures](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_merged.png?raw=true)
-![select pictures](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_ops_second.png?raw=true)
-![select pictures](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_overview.png?raw=true)
+![](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_bytes_second.png =250x)
+![](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_merged.png =250x)
+![](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_ops_second.png =250x)
+![](https://github.com/grundic/zabbix-disk-performance/blob/master/images/sda_overview.png =250x)
 
 Installation
 ------------
