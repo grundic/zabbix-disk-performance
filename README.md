@@ -7,8 +7,9 @@ With this template you can collect different disk statistics.
 
 Installation
 ------------
-To install, copy `userparameter_diskstats.conf` to /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf and `lld-disks.py` to /var/lib/zabbix/scripts/lld-disks.py.
-If /var/lib/zabbix/scripts does't exists, create it: ```sudo mkdir /var/lib/zabbix/scripts -p && sudo chown zabbix:zabbix /var/lib/zabbix -R```
+To install, copy `userparameter_diskstats.conf` to /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf and `lld-disks.py` to `/usr/local/bin/lld-disks.py`.
+Do not forget to mark it executable.
+
 `userparameter_diskstats.conf` is user parameters for Zabbix.
 `lld-disks.py` is low level discovery script for enumerating disks of your system.
 
@@ -18,7 +19,8 @@ After that restart zabbix-agent
 Go to Zabbix's web interface, Configuration->Templates and import `Template Disk Performance.xml`.
 After that you should be able to monitor disk activity for all your disks.
 
-Low level discovery won't list your RAID devices, so some tuning may be required.
+Low level discovery will list your RAID devices, and LVM volumes, but LVM
+volumes will be mapped with their device-mapper ID, not the pretty names.
 
 Using without User Parameters
 -----------------------------
