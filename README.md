@@ -7,8 +7,17 @@ With this template you can collect different disk statistics.
 
 Installation
 ------------
-To install, copy `userparameter_diskstats.conf` to /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf and `lld-disks.py` to `/usr/local/bin/lld-disks.py`.
+To install, copy `userparameter_diskstats.conf` to `/etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf` and `lld-disks.py` to `/usr/local/bin/lld-disks.py`.
 Do not forget to mark it executable.
+```bash
+# diskstats user parameters config
+sudo mkdir -p /etc/zabbix/zabbix_agentd.d/
+sudo wget https://raw.githubusercontent.com/grundic/zabbix-disk-performance/master/userparameter_diskstats.conf -O /etc/zabbix/zabbix_agentd.d/userparameter_diskstats.conf
+
+# low level discovery script
+sudo wget https://raw.githubusercontent.com/grundic/zabbix-disk-performance/master/lld-disks.py -O /usr/local/bin/lld-disks.py
+sudo chmod +x /usr/local/bin/lld-disks.py
+```
 
 `userparameter_diskstats.conf` is user parameters for Zabbix.
 `lld-disks.py` is low level discovery script for enumerating disks of your system.
@@ -35,7 +44,10 @@ Template have this values configured, but disabled by default.
 
 Testing
 -------
-To test that everything work use `zabbix_get`:
-```
+To test that everything work use `zabbix_get` (from some time this is in it's own package, so do `apt-get/yum install zabbix-get`):
+```bash
+# view result of low level discovery
+zabbix_get -s 127.0.0.1 -k "custom.vfs.discover_disks"
+# view statistics for 'sda' disk
 zabbix_get -s 127.0.0.1 -k "custom.vfs.dev.write.sectors[sda]"
 ```
