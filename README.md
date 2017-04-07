@@ -36,7 +36,7 @@ After that you should be able to monitor disk activity for all your disks.
 Please note, that items and graphs are created for each disk/partition individually using discovery script, so do not expect to
 find them under usual configuration -- they would be in `Discovery rules` section:
 
-![Discovery Rules](https://github.com/grundic/zabbix-disk-performance/blob/master/images/discovery_rules.png?raw=true =250x)
+![Discovery Rules](https://github.com/grundic/zabbix-disk-performance/blob/master/images/discovery_rules.png?raw=true=250x)
 
 Low level discovery will list your RAID devices, and LVM volumes, but LVM
 volumes will be mapped with their device-mapper ID, not the pretty names.
